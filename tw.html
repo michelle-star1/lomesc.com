@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>連洋船舶工程有限公司 | 船舶節能與環保技術</title>
+
+  <meta name="description" content="連洋船舶工程有限公司（台灣）提供船舶仲介、新造船支援、船舶修理及節能減排環保技術，致力於提升船舶營運效率。" />
+
+  <style>
+    /* ===== 동일 스타일 (영문 페이지와 완전 동일) ===== */
+    body{
+      margin:0;
+      font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:#eaf7f2;
+      background:#061613;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .bg-fixed{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      background:
+        linear-gradient(90deg, rgba(6,22,19,.92), rgba(6,22,19,.75)),
+        url("hero-lian-ocean-eco.png");
+      background-size:cover;
+      background-position:center;
+    }
+    header{
+      position:sticky;
+      top:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:12px 18px;
+      background:rgba(3,17,15,.65);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.15);
+    }
+    .brand-logo{ height:46px; }
+    nav a{
+      margin-left:12px;
+      font-weight:800;
+      font-size:13px;
+      color:#b4d7cc;
+    }
+    nav a:hover{ color:#fff; }
+    section{ padding:60px 20px; max-width:1100px; margin:auto; }
+    h1{ font-size:38px; line-height:1.2; }
+    h2{ margin-top:0; }
+    p{ color:#b4d7cc; line-height:1.8; }
+    .box{
+      background:rgba(255,255,255,.05);
+      padding:20px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.15);
+      margin-bottom:18px;
+    }
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#b4d7cc;
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+  </style>
+</head>
+
+<body>
+<div class="bg-fixed"></div>
+
+<header>
+  <img src="/logo.png" alt="連洋船舶工程有限公司" class="brand-logo">
+  <nav>
+    <a href="#services">服務項目</a>
+    <a href="#technology">節能技術</a>
+    <a href="#about">關於我們</a>
+    <a href="#contact">聯絡我們</a>
+    <a href="/index.html">EN</a>
+  </nav>
+</header>
+
+<section>
+  <h1>
+    船舶節能與環保技術<br>
+    打造永續海事未來
+  </h1>
+  <p>
+    連洋船舶工程有限公司致力於協助船東與營運商提升燃油效率、
+    降低排放，並透過實務導向的工程技術，
+    提供完整的船舶解決方案。
+  </p>
+</section>
+
+<section id="services">
+  <h2>服務項目</h2>
+
+  <div class="box">
+    <h3>船舶仲介</h3>
+    <p>
+      提供船舶搜尋、市場分析、交易協調及合約支援，
+      協助買賣雙方順利完成交易。
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>新造船支援</h3>
+    <p>
+      從規格審查、船廠溝通到建造監督，
+      提供完整的新造船工程與專案協調服務。
+    </p>
+  </div>
+
+  <div class="box">
+    <h3>船舶修理與改裝</h3>
+    <p>
+      提供修船規劃、節能改裝與現場技術支援，
+      確保船舶於最短時間內恢復營運。
+    </p>
+  </div>
+</section>
+
+<section id="technology">
+  <h2>節能與環保技術</h2>
+  <p>
+    我們專注於實際可行的節能方案，
+    協助船舶降低燃油消耗、減少碳排放，
+    並符合國際法規與營運需求。
+  </p>
+</section>
+
+<section id="about">
+  <h2>關於我們</h2>
+  <p>
+    連洋船舶工程有限公司設立於台灣，
+    結合市場經驗與工程實務，
+    提供船舶仲介、建造及修理的一站式服務。
+  </p>
+  <p><i>Connecting Maritime Excellence</i></p>
+</section>
+
+<section id="contact">
+  <h2>聯絡我們</h2>
+  <p>
+    電子郵件：
+    <a href="mailto:michelle@lomesc.com">michelle@lomesc.com</a><br>
+    地點：台灣
+  </p>
+</section>
+
+<footer>
+  © <span id="y"></span> 連洋船舶工程有限公司
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
