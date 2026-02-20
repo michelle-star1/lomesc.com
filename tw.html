@@ -221,7 +221,57 @@
       margin-top:14px;
     }
     .pill i{ width:8px; height:8px; border-radius:99px; background:#a3ffcf; }
+.brand{ min-width:auto; }
 
+.brand-link{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+
+.logo-frame{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 10px;
+  border-radius:14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 14px 40px rgba(0,0,0,.35);
+}
+
+/* 로고는 "크기"보다 "프레임"으로 고급화 */
+.brand-logo{
+  height:44px;         /* ← 로고 배너를 크게 쓰면 흰박스가 더 튐 */
+  width:auto;
+  display:block;
+  object-fit:contain;
+  filter:none;
+}
+
+/* 회사명/서브라인을 텍스트로 '고급' 처리 */
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+  gap:4px;
+  min-width: 220px;
+}
+
+.brand-name{
+  font-weight:1000;
+  letter-spacing:.2px;
+  font-size:15px;
+  color: var(--text);
+}
+
+.brand-sub{
+  font-size:12px;
+  color: rgba(234,247,242,.72);
+  font-weight:800;
+  letter-spacing:.2px;
+}
     /* ===== Sections ===== */
     section{ margin-top:20px; }
     .section-title{
@@ -400,6 +450,32 @@
         margin-left:6px;
       }
     }
+    @media (max-width: 920px){
+  header{ align-items:center; }
+
+  .brand{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  .brand-text{
+    display:none; /* 모바일은 로고만 보여주면 더 고급 */
+  }
+
+  .logo-frame{
+    padding:10px 12px;
+  }
+
+  .brand-logo{
+    height:46px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:flex-start;
+  }
+}
   </style>
 </head>
 
@@ -408,30 +484,37 @@
 
   <div class="wrap">
     <header>
-      <div class="brand">
-        <img src="/logo.png" alt="連洋船舶工程有限公司 Lian Ocean Shipbuilding & Engineering Co., Ltd." class="brand-logo">
-      </div>
+  <div class="brand">
+    <img src="logo.png" 
+         alt="連洋船舶工程有限公司" 
+         class="brand-logo">
+  </div>
 
-      <nav>
-        <a href="#services">服務項目</a>
-        <a href="#technology">節能技術</a>
-        <a href="#about">關於我們</a>
-        <a href="#contact">聯絡我們</a>
-        <a href="https://mail.lomesc.com" target="_blank" rel="noreferrer">Webmail</a>
-        <a href="/index.html" class="lang">EN</a>
-      </nav>
-    </header>
+  <nav class="nav">
+    <a href="#services">服務項目</a>
+    <a href="#technology">節能技術</a>
+    <a href="#about">關於我們</a>
+    <a href="#contact">聯絡我們</a>
+    <a href="https://mail.lomesc.com" target="_blank">Webmail</a>
 
+    <!-- Language switch -->
+    <a href="/index.html" class="lang">EN</a>
+  </nav>
+</header>
     <!-- HERO -->
     <main class="hero" id="top">
       <div class="hero-grid">
         <div>
           <div class="kicker"><span class="dot"></span> MARINE EFFICIENCY • CLEAN OPERATIONS • PRACTICAL EXECUTION</div>
-          <h1>船舶節能與環保技術<br>打造永續海事未來。</h1>
+          <h1>
+          船舶節能與環保技術<br>
+          打造現代化永續船舶
+          </h1>
+          
           <p class="lead">
-            我們協助船東與營運商提升燃油效率並降低排放。
-            從船舶仲介、新造船到修理與改裝，以工程實務為導向，
-            支援更潔淨、更高效的海事營運。
+          我們協助船東與營運商提升燃油效率、降低排放。
+          從船舶仲介、新造船監造到維修與改裝，
+          以工程專業為基礎，打造更潔淨、更智慧的海事營運模式。
           </p>
 
           <div class="cta">
