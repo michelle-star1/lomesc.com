@@ -356,102 +356,16 @@
       .brand-logo{ height:72px; }
       nav{ justify-content:flex-end; }
     }
-    /* ===== Mobile header fix ===== */
-    @media (max-width: 920px){
     
-      header{
-        display:flex;
-        flex-direction:column;     /* 헤더를 2줄로 */
-        align-items:stretch;
-        gap:10px;
-        padding:12px 14px;
-      }
-    
-      .brand{
-        width:100%;
-        justify-content:flex-start;
-      }
-    
-      .brand-logo{
-        height:56px;               /* 모바일에서 로고 과대 방지 */
-        max-width:100%;
-      }
-    
-      nav{
-        width:100%;
-        justify-content:flex-start;
-        flex-wrap:nowrap;          /* 줄바꿈 금지 */
-        overflow-x:auto;           /* 한 줄로 두고 가로 스크롤 */
-        -webkit-overflow-scrolling: touch;
-        gap:8px;
-        padding-bottom:6px;
-      }
-    
-      nav::-webkit-scrollbar{
-        height:6px;
-      }
-      nav::-webkit-scrollbar-thumb{
-        background:rgba(255,255,255,.18);
-        border-radius:99px;
-      }
-    
-      nav a{
-        flex:0 0 auto;             /* 각 메뉴가 줄바꿈 안 되게 */
-        padding:8px 10px;
-        font-size:12px;
-        border-radius:12px;
-      }
-    
-      .lang{
-        margin-left:6px;           /* 언어 버튼도 메뉴 라인 안에 */
-      }
-    }
-    /* ===== Mobile: center logo ===== */
-    @media (max-width: 920px){
-    
-      header{
-        display:flex;
-        flex-direction:column;
-        align-items:center;          /* 전체 가운데 정렬 */
-        gap:10px;
-        padding:12px 14px;
-      }
-    
-      .brand{
-        width:100%;
-        display:flex;
-        justify-content:center;      /* 로고 중앙 */
-      }
-    
-      .brand-logo{
-        height:56px;
-        margin:0 auto;
-      }
-    
-      nav{
-        width:100%;
-        display:flex;
-        justify-content:flex-start;  /* 메뉴는 좌측부터 */
-        flex-wrap:nowrap;
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-        gap:8px;
-        padding-bottom:6px;
-      }
-    
-      nav a{
-        flex:0 0 auto;
-        padding:8px 10px;
-        font-size:12px;
-        white-space:nowrap;
-      }
-    
-      .lang{
-        margin-left:6px;
-      }
-    }
-    @media (max-width: 920px){
-  header{ align-items:center; }
+   /* ===== Mobile header (single source of truth) ===== */
+@media (max-width: 920px){
+  header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    padding:12px 14px;
+  }
 
   .brand{
     width:100%;
@@ -459,21 +373,38 @@
     justify-content:center;
   }
 
-  .brand-text{
-    display:none; /* 모바일은 로고만 보여주면 더 고급 */
-  }
+  /* 모바일에서는 텍스트를 숨기고 로고만 중앙 = 더 고급 */
+  .brand-text{ display:none; }
 
   .logo-frame{
     padding:10px 12px;
   }
-
   .brand-logo{
-    height:46px;
+    height:50px;
   }
 
   nav{
     width:100%;
+    display:flex;
     justify-content:flex-start;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    gap:8px;
+    padding-bottom:6px;
+  }
+
+  nav a{
+    flex:0 0 auto;
+    padding:8px 10px;
+    font-size:12px;
+    white-space:nowrap;
+  }
+
+  nav::-webkit-scrollbar{ height:6px; }
+  nav::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.18);
+    border-radius:99px;
   }
 }
   </style>
@@ -483,11 +414,18 @@
   <div class="bg-fixed" aria-hidden="true"></div>
 
   <div class="wrap">
-    <header>
+   <header>
   <div class="brand">
-    <img src="logo.png" 
-         alt="連洋船舶工程有限公司" 
-         class="brand-logo">
+    <a class="brand-link" href="#top" aria-label="連洋船舶工程有限公司">
+      <span class="logo-frame">
+        <img src="logo.png" alt="連洋船舶工程有限公司" class="brand-logo">
+      </span>
+
+      <span class="brand-text">
+        <span class="brand-name">連洋船舶工程有限公司</span>
+        <span class="brand-sub">台灣 · 船舶仲介 · 新造船 · 船舶修理</span>
+      </span>
+    </a>
   </div>
 
   <nav class="nav">
@@ -495,9 +433,7 @@
     <a href="#technology">節能技術</a>
     <a href="#about">關於我們</a>
     <a href="#contact">聯絡我們</a>
-    <a href="https://mail.lomesc.com" target="_blank">Webmail</a>
-
-    <!-- Language switch -->
+    <a href="https://mail.lomesc.com" target="_blank" rel="noreferrer">Webmail</a>
     <a href="/index.html" class="lang">EN</a>
   </nav>
 </header>
